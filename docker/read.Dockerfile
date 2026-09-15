@@ -48,6 +48,7 @@ RUN apt-get update \
         build-essential \
         ca-certificates \
         curl \
+        docker-buildx \
         docker.io \
         fd-find \
         fzf \

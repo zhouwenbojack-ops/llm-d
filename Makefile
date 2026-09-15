@@ -169,6 +169,8 @@ buildah-build: check-builder ## Build and push image (multi-arch if supported)
 image-build: check-container-tool ## Build Docker image using $(CONTAINER_TOOL)
 	@printf "\033[33;1m==== Building Docker image $(IMG) for linux/$(ARCH) ====\033[0m\n"
 	$(CONTAINER_TOOL) build --progress=plain --platform linux/$(ARCH) \
+		--build-arg VLLM_REPO=$(VLLM_REPO) \
+		--build-arg VLLM_COMMIT_SHA=$(VLLM_COMMIT_SHA) \
 		--build-arg CUDA_MAJOR=$(CUDA_MAJOR) \
 		--build-arg CUDA_MINOR=$(CUDA_MINOR) \
 		--build-arg TARGETOS=$(OS) \
