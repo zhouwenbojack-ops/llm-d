@@ -18,3 +18,6 @@ CLAUDE.md
 # AI
 .claude
 **/__pycache__/
+
+# local source-reading environment
+.venv-linux/
